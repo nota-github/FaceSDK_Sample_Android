@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NotaFaceSample</string>
+    <string name="repetitive_permission_request_denied">퍼미션이 거부되었습니다. 설정(앱 정보)에서 퍼미션을 허용해야 합니다. </string>
+
+    <string-array name="sp_mode">
+        <item>Inference Mode</item>
+        <item>Camera Mode</item>
+    </string-array>
+
+</resources>

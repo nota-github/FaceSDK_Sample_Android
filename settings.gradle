@@ -1,0 +1,2 @@
+include ':facesdksample'
+rootProject.name = "Nota_FaceSDK_Sample_Android"

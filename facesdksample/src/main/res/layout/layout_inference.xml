@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.nota.facesdksample.viewmodel.InferenceViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/image_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            loadImageGlide="@{viewModel.currentBitmap}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.nota.facesdksample.view.OverlayView
+            android:id="@+id/image_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            drawFacialData="@{viewModel.facialData}"
+            app:layout_constraintBottom_toBottomOf="@id/image_container"
+            app:layout_constraintEnd_toEndOf="@id/image_container"
+            app:layout_constraintStart_toStartOf="@id/image_container"
+            app:layout_constraintTop_toTopOf="@id/image_container" />
+
+        <RadioGroup
+            android:id="@+id/rg_strategy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onCheckedChanged="@{viewModel.strategyChangeListener}">
+
+            <RadioButton
+                android:id="@+id/rb_ui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"
+                android:checked="true"
+                android:text="UI Thread" />
+
+            <RadioButton
+                android:id="@+id/rb_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"
+                android:text="Default Thread" />
+
+            <RadioButton
+                android:id="@+id/rb_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"
+                android:text="High Priority Thread " />
+
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:onClick="@{viewModel.onClickNext()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_strategy"/>
+
+        <Button
+            android:id="@+id/bt_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prev"
+            android:onClick="@{viewModel.onClickPrev()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_next" />
+
+        <TextView
+            android:id="@+id/tv_inference_fd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:background="@android:color/white"
+            android:text="@{viewModel.fdLogTxt}"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_inference_fr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:background="@android:color/white"
+            android:text="@{viewModel.frLogTxt}"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_inference_fd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
