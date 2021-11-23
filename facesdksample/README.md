@@ -24,7 +24,7 @@ Applies face recognition to the images in the Assets/faces.
 #### Description :
 - (1) Mode Button - switch between Inference and Camera mode.
 - (2) Thread Strategy - Select thread strategy to run face recognition process :
-> UI thread (Main Thread) : 
+> - UI thread (Main Thread) : 
 > Shows the best performance, but blocks UI from being updated while recognition is taking place
 > - Default Thread : Newly constructed thread (no priority given)
 > Does not affect UI update, but recognition latency may vary depending on the device
