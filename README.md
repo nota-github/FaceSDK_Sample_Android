@@ -14,8 +14,11 @@ SDK에서 제공되는 기능은 아래와 같다 :
 
 ## Prerequisite
 1. OpenCV (4.4.0 버전 권장)
-2. Tensorflow lite (https://www.tensorflow.org/lite/guide/android)  
-  
+2. Tensorflow 및 Tensorflow-lite (https://www.tensorflow.org/lite/guide/android) (Nightly 버전 권장) 
+
+- [샘플 앱](https://github.com/nota-github/Nota_FaceSDK_Sample_Android/tree/main/facesdksample) build.gradle 참조
+
+![스크린샷 2021-11-23 오전 11 33 09](https://user-images.githubusercontent.com/75300554/142963202-2e5560c2-0b1b-4cca-8c16-ccbf8013f9d1.png)
     
 ## Usage
 노타 안면인식 SDK는 아래와 같은 순서로 작동한다 : 
