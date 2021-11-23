@@ -88,7 +88,7 @@ fun inference(inputBitmap: Bitmap, isFaceRecognition: Boolean, callback:(result:
 ##### params :
 inputBitmap : Image to process face recognition 
 > - For the image ratio of the inputBitmap parameter, 1:1 ratio is recommended.
-> - If the image ratio is not 1:1, it is cropped and processed inside the SDK.
+> - If the image ratio is not 1:1, it is cropped and processed inside the SDK. (Center Crop)
 > - **In this case, face recognition may not be processed in a certain area of the inputBitmap image.**    
 
 isFaceRecognition : Whether to perform facial feature extraction (true: perform, false: do not perform).  
