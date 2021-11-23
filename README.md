@@ -1,35 +1,39 @@
-# Nota Face SDK for Android
-노타의 안드로이드용 안면인식 SDK
+# Face Recognition SDK - Android
+
+## Introduction
+This SDK provides APIs and a sample application for real-time face recognition 
 
 ## License
-노타에서 제공하는 데모 라이센스는 3개월 시용기간을 제공하고 있다  
+Demo license allows up to 3 months free trial
 
-  
 ## Features
-SDK에서 제공되는 기능은 아래와 같다 :
-* 얼굴감지 : 이미지에서 얼굴의 BoundingBox 및 Landmark를 추출한다.
-* 안면인식 : 얼굴을 인식해 특징을 추출. 특징은 float array로 표현된다.
-* 특징비교 : 2개의 얼굴 특징을 비교해 유사도를 도출한다.
-
+Features provided in this SDK are as follows :
+* Face Detection: detects face from the image and extract its bounding box and landmarks
+* Face Recognition: recognizes a face via extracting its feature. Features are expressed in float array
+* Feature Comparison: calculates similarity between one feature to another using cosine similarity
 
 ## Prerequisite
-1. OpenCV (4.4.0 버전 권장)
-2. Tensorflow 및 Tensorflow-lite (https://www.tensorflow.org/lite/guide/android) (Nightly 버전 권장) 
+1. OpenCV 
+   recommended version : >= 4.4.0)
+2. Tensorflow and Tensorflow-lite (https://www.tensorflow.org/lite/guide/android) 
+   recommened version : nightly 
 
-- [샘플 앱](https://github.com/nota-github/Nota_FaceSDK_Sample_Android/tree/main/facesdksample) build.gradle 참조
+- [Sample Application](https://github.com/nota-github/Nota_FaceSDK_Sample_Android/tree/main/facesdksample) <br />
+please refer to build.gradle
 
-![스크린샷 2021-11-23 오전 11 33 09](https://user-images.githubusercontent.com/75300554/142963202-2e5560c2-0b1b-4cca-8c16-ccbf8013f9d1.png)
+![스크린샷 2021-11-23 오전 11 33 09](https://user-images.githubusercontent.com/75300554/142963202-2e5560c2-0b1b-4cca-8c16-ccbf8013f9d1.png) <br />
     
 ## Usage
+To implement face recognition using this SDK, follow the steps below
 노타 안면인식 SDK는 아래와 같은 순서로 작동한다 : 
-1. [`SDK 초기화`](#initialization)
-2. [`FacialProcess` 선언 및 inference 메서드 호출](#FacialProcess)
-3. callback 메서드 파라미터로 결과값 도출 -> 도출된 특징 저장
-4. [(저장된)안면 특징들을 비교해 `유사도 도출`](#featurecomparison)
+1. [`SDK initialization`](#initialization)
+2. [`FacialProcess` declaration and call inference method](#FacialProcess)
+3. Attach callback to retrieve the output of the FacialProcess
+4. [Compare features using the provided method 'feature comparison'](#featurecomparison)
   
    
      
-### Sample 코드
+### Sample Code
 ```kotlin
 class Sample {
     // SDK initialization
@@ -57,20 +61,19 @@ class Sample {
 ```
   
 ### Initialization
-SDK 사용을 위해선, SDK 초기화가 우선적으로 이뤄져야한다. SDK 초기화 없이 활용되는 기능오류를 발생시킬 수 있다.  
-(유료 라이센스 기준) SDK 초기화를 위해선, 사전에 Nota에서 발급한 라이센스 키를 입력하여야 한다.  
-(데모 라이센스 기준) 사전에 협의가 된 기간내에만 SDK 초기화가 가능하다
+SDK initialization must be done before any usage. Use of the SDK without initialization may and will invoke errors or unexpected results that Nota will not be held responsible for.
+(Paid License) Provide License Key issued for SDK initialization.
+(Demo License) SDK will only be available for the pre-negotiated duration
 
 ```kotlin
 NotaFaceSDK.initialize(context, key)
 ```
   
 ### FaceRecognition
-FaceRecognition을 사용하기 위해선 [`SDK 초기화`](#initialization)가 되어 있어야 한다.  
-안면인식에 대한 결과는 FacialProcess.inference 메서드의 callback 메서드 파라미터를 이용해 얻어올 수 있다.  
-성공적인 안면인식이 된 경우 [List<FacialProcess.Result>](#Result) 객체가 반환된다  
-얼굴이 감지되지 않는 경우 emptyList() 가 반환된다.  
-  
+To use FaceRecogntion, [`SDK initialization`](#initialization) must be performed.  
+The result of FaceRecogition can be retrieved by attaching the callback method to FacialProcess.inference
+Upon successful Face Recognition, [List<FacialProcess.Result>](#Result) will be returned via the callback
+If no face is detected, emptyList() will be returned.  
   
 #### FacialProcess.inference()
 
@@ -83,10 +86,10 @@ fun inference(inputBitmap: Bitmap, isFaceRecognition: Boolean, callback:(result:
   
 ## Data
 ### Result
-Result 클래스는 안면인식 SDK 에서 사용하는 데이터 클래스이다.  
-inference 메서드 호출시 isFaceRecognition 파라미터를 통해, 얼굴 특징 추출 기능을 on/off 할 수 있다.  
-얼굴 특징 추출 기능이 off 된 경우, Result 객체의 FacialFeature 값이 null로 반환된다.  
-[Face](#face) 객체 에는 눈, 코, 등의 좌표와 얼굴 Bounding box의 위치가 있다.  
+Result is a pre-defined data class used in the SDK.  
+Feature extraction can be turned on/off by setting isFaceRecognition parameter when using the inference method
+If feature extraction is turned off, the FacialFeature value of the Result class will be null.
+[Face](#face) contains coordinates and bounding box of the face and its landmarks
 ```kotlin
 data class Result(val face: Face, val facialFeature: FacialFeature?, val detectedFaceBitmap: Bitmap, val log: Log)
 data class Log(val fdInferenceTime: Long, val frInferenceTime: Long?)
@@ -94,17 +97,17 @@ data class Log(val fdInferenceTime: Long, val frInferenceTime: Long?)
 
 
 ### Face
-Face 데이터 클래스
+Face
 ```kotlin
 data class Face(@NonNull val loc : RectF, @NonNull val landmarks : List<PointF>)
 ```
 
 #### Feature Comparison
-두개의 feature를 비교해 유사도를 도출한다. 권장하는 유사도는 0.65점으로, 권장 유사도 이상의 유사도를 지닌 두개의 얼굴은 동일한 인물이라고 판별하는걸 권장한다.
+Calculates similarity between two features. Two features with similarity above the threshold are considered identical. Recommended similarity threshold is 0.65.
 
 ```kotlin
 /**
- * If smilarity is above that of threshold, then we consider two features to be identical
+ * If the similarity is above that of the threshold, then we consider two features to be identical
  */
 fun isIdentical(var1 : FacialFeature, threshold : Double = 0.65) : Boolean
 
@@ -116,11 +119,11 @@ fun getSimilarity(var1 : FacialFeature) : Double
 ```
 
 ## Exception
-안면인식 SDK에서 발생할 수 있는 Exception들을 아래와 같다  
+Exceptions that may occur when using the SDK are as follow : 
 
 1. IllegalLicenseException 
-   - 개발자가 SDK 초기화시 제공한 라이센스가 유효하지 않거나 사용기간이 초과한 경우에 발생하는 에러이다
+   - Invoked when the key given during the SDK initialization is either invalid or expired
 2. OutOfMemoryError
-   - 안면인식 모델들 로딩할때 메모리가 부족해 발생하는 에러이다. Manifest에 android:largeHeap="true"을 정의하여 해결할 수 있다
+   - Invoked when memory is insufficient when loading the ai model. Allow android:largeHeap="true" on the application Manifest to resolve the problem
 3. ClassNotFoundException: Didn't find class "...."
-   - 프로젝트에 추가되어야 하는 api 들이 정의되어 있지 않아 발생하는 에러이다. [필수 api](#Prerequisite)
+   - Invoked when prerequisite APIs are not implemented. [prerequisite api](#Prerequisite)
