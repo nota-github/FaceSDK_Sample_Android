@@ -80,15 +80,11 @@ fun inference(inputBitmap: Bitmap, isFaceRecognition: Boolean, callback:(result:
   
 ## Data
 ### Result
-Result은 안면인식 SDK 에서 사용하는 데이터 클래스이다.  
+Result 클래스는 안면인식 SDK 에서 사용하는 데이터 클래스이다.  
 inference 메서드 호출시 isFaceRecognition 파라미터를 통해, 얼굴 특징 추출 기능을 on/off 할 수 있다.  
 얼굴 특징 추출 기능이 off 된 경우, Result 객체의 FacialFeature 값이 null로 반환된다.  
 [Face](#face) 객체 에는 눈, 코, 등의 좌표와 얼굴 Bounding box의 위치가 있다.  
 ```kotlin
-data class Recognition(@Nullable var face           : Face? = null,
-                       @Nullable var feature        : FacialFeature? = null,
-                       @NonNull  val originalBitmap : Bitmap)
-                       
 data class Result(val face: Face, val facialFeature: FacialFeature?, val detectedFaceBitmap: Bitmap, val log: Log)
 data class Log(val fdInferenceTime: Long, val frInferenceTime: Long?)
 ```
