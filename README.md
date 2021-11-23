@@ -24,8 +24,7 @@ please refer to build.gradle
 ![스크린샷 2021-11-23 오전 11 33 09](https://user-images.githubusercontent.com/75300554/142963202-2e5560c2-0b1b-4cca-8c16-ccbf8013f9d1.png) <br />
     
 ## Usage
-To implement face recognition using this SDK, follow the steps below
-노타 안면인식 SDK는 아래와 같은 순서로 작동한다 : 
+To implement face recognition using this SDK, follow the steps below:
 1. [`SDK initialization`](#initialization)
 2. [`FacialProcess` declaration and call inference method](#FacialProcess)
 3. Attach callback to retrieve the output of the FacialProcess
