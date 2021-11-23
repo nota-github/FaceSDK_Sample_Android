@@ -80,7 +80,16 @@ fun inference(inputBitmap: Bitmap, isFaceRecognition: Boolean, callback:(result:
 
 ```
   
-  
+##### params :
+inputBitmap : 얼굴인식을 처리할 타겟 이미지.  
+> - inputBitmap 파라미터의 이미지 비율은 1:1 비율이 권장된다.
+> - 이미지 비율이 1:1이 아닐 경우 SDK 내부에서 crop 되어 처리된다.
+> - **이 경우 inputBitmap의 이미지 일정 영역에서 얼굴 인식이 처리되지 않을 수 있다.**    
+
+isFaceRecognition : 얼굴 특징 추출 수행 여부 (true: 수행, false: 미수행).  
+callback : 얼굴인식 수행 결과 callback 
+
+
 ## Data
 ### Result
 Result 클래스는 안면인식 SDK 에서 사용하는 데이터 클래스이다.  
