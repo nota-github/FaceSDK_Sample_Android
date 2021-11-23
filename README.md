@@ -1,28 +1,30 @@
-# Face Recognition SDK - Android
+# Face Recognition SDK - Android <br/>
 
 ## Introduction
-This SDK provides APIs and a sample application for real-time face recognition 
+This SDK provides APIs and a sample application for real-time face recognition <br/> <br/>
 
 ## License
-Demo license allows up to 3 months free trial
+Demo license allows up to 3 months free trial <br/><br/>
 
-## Features
+
+## Features 
 Features provided in this SDK are as follows :
 * Face Detection: detects face from the image and extract its bounding box and landmarks
 * Face Recognition: recognizes a face via extracting its feature. Features are expressed in float array
-* Feature Comparison: calculates similarity between one feature to another using cosine similarity
-
+* Feature Comparison: calculates similarity between one feature to another using cosine similarity <br/><br/>
+ 
 ## Prerequisite
-1. OpenCV 
+1. OpenCV <br/>
    recommended version : >= 4.4.0)
-2. Tensorflow and Tensorflow-lite (https://www.tensorflow.org/lite/guide/android) 
+2. Tensorflow and Tensorflow-lite (https://www.tensorflow.org/lite/guide/android) <br/>
    recommened version : nightly 
 
-- [Sample Application](https://github.com/nota-github/Nota_FaceSDK_Sample_Android/tree/main/facesdksample) <br />
+- [Sample Application](https://github.com/nota-github/Nota_FaceSDK_Sample_Android/tree/main/facesdksample) <br/>
 please refer to build.gradle
 
-![스크린샷 2021-11-23 오전 11 33 09](https://user-images.githubusercontent.com/75300554/142963202-2e5560c2-0b1b-4cca-8c16-ccbf8013f9d1.png) <br />
-    
+![스크린샷 2021-11-23 오전 11 33 09](https://user-images.githubusercontent.com/75300554/142963202-2e5560c2-0b1b-4cca-8c16-ccbf8013f9d1.png)
+
+<br/><br/>
 ## Usage
 To implement face recognition using this SDK, follow the steps below:
 1. [`SDK initialization`](#initialization)
@@ -31,7 +33,7 @@ To implement face recognition using this SDK, follow the steps below:
 4. [Compare features using the provided method 'feature comparison'](#featurecomparison)
   
    
-     
+<br/> <br/>
 ### Sample Code
 ```kotlin
 class Sample {
@@ -58,22 +60,24 @@ class Sample {
 }
 
 ```
+<br/> <br/>
   
 ### Initialization
-SDK initialization must be done before any usage. Use of the SDK without initialization may and will invoke errors or unexpected results that Nota will not be held responsible for.
-(Paid License) Provide License Key issued for SDK initialization.
-(Demo License) SDK will only be available for the pre-negotiated duration
+SDK initialization must be done before any usage. Use of the SDK without initialization may and will invoke errors or unexpected results that Nota will not be held responsible for.<br/>
+(Paid License) Provide License Key issued for SDK initialization.<br/>
+(Demo License) SDK will only be available for the pre-negotiated duration<br/>
 
 ```kotlin
 NotaFaceSDK.initialize(context, key)
 ```
-  
+<br/> <br/>
+
 ### FaceRecognition
-To use FaceRecogntion, [`SDK initialization`](#initialization) must be performed.  
-The result of FaceRecogition can be retrieved by attaching the callback method to FacialProcess.inference
-Upon successful Face Recognition, [List<FacialProcess.Result>](#Result) will be returned via the callback
+To use FaceRecogntion, [`SDK initialization`](#initialization) must be performed. <br/>  
+The result of FaceRecogition can be retrieved by attaching the callback method to FacialProcess.inference <br/>
+Upon successful Face Recognition, [List<FacialProcess.Result>](#Result) will be returned via the callback<br/>
 If no face is detected, emptyList() will be returned.  
-  
+<br/>
 #### FacialProcess.inference()
 
 ```kotlin
@@ -81,7 +85,7 @@ If no face is detected, emptyList() will be returned.
 fun inference(inputBitmap: Bitmap, isFaceRecognition: Boolean, callback:(result: List<Result>)->Unit)
 
 ```
-  
+<br/>   <br/>
   
 ## Data
 ### Result
@@ -94,15 +98,15 @@ data class Result(val face: Face, val facialFeature: FacialFeature?, val detecte
 data class Log(val fdInferenceTime: Long, val frInferenceTime: Long?)
 ```
 
-
+<br/> <br/>
 ### Face
-Face
 ```kotlin
 data class Face(@NonNull val loc : RectF, @NonNull val landmarks : List<PointF>)
 ```
-
+<br/>
 #### Feature Comparison
-Calculates similarity between two features. Two features with similarity above the threshold are considered identical. Recommended similarity threshold is 0.65.
+Calculates similarity between two features. Two features with similarity above the threshold are considered identical.  <br/>
+Recommended similarity threshold is 0.65.
 
 ```kotlin
 /**
@@ -116,7 +120,7 @@ fun isIdentical(var1 : FacialFeature, threshold : Double = 0.65) : Boolean
 fun getSimilarity(var1 : FacialFeature) : Double
 
 ```
-
+<br/> <br/>
 ## Exception
 Exceptions that may occur when using the SDK are as follow : 
 
