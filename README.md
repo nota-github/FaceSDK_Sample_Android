@@ -85,6 +85,15 @@ If no face is detected, emptyList() will be returned.
 fun inference(inputBitmap: Bitmap, isFaceRecognition: Boolean, callback:(result: List<Result>)->Unit)
 
 ```
+##### params :
+inputBitmap : Image to process face recognition 
+> - For the image ratio of the inputBitmap parameter, 1:1 ratio is recommended.
+> - If the image ratio is not 1:1, it is cropped and processed inside the SDK.
+> - **In this case, face recognition may not be processed in a certain area of the inputBitmap image.**    
+
+isFaceRecognition : Whether to perform facial feature extraction (true: perform, false: do not perform).  
+callback : Face recognition result callback
+
 <br/>   <br/>
   
 ## Data
