@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.graphics.times
@@ -45,16 +46,14 @@ class OverlayView : View {
             rectPaint.style = Paint.Style.STROKE
             rectPaint.strokeWidth = 3f
 
-            canvas?.drawRect(it.face.rectf.times(width), rectPaint)
+            val overlayRect = RectF(it.face.rectf.left * width, it.face.rectf.top * height,
+                                   it.face.rectf.right * width,it.face.rectf.bottom * height)
+
+            canvas?.drawRect(overlayRect, rectPaint)
 
             val landmarkPaint = Paint()
             landmarkPaint.color = Color.MAGENTA
             landmarkPaint.style = Paint.Style.FILL
-
-            // draw landmarks
-            it.face.landmarks.forEach { point ->
-                canvas?.drawCircle(point.x * width, point.y * height, 10f, landmarkPaint)
-            }
 
             // draw rect, id text
             it.facialFeature?.let { feature ->

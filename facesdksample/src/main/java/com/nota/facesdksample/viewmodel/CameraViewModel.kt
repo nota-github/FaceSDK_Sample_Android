@@ -30,8 +30,7 @@ class CameraViewModel : ViewModel(){
     val cameraSelector = MutableLiveData(CameraSelector.DEFAULT_FRONT_CAMERA)
     val facialData = MutableLiveData<List<FacialProcess.Result>>()
     val fpsLogTxt = MutableLiveData("")
-    val fdLogTxt = MutableLiveData("")
-    val frLogTxt = MutableLiveData("")
+    val infLogTimeTxt = MutableLiveData("")
 
     fun onSwitchState(state: State) : View.OnClickListener{
         return View.OnClickListener {
@@ -114,15 +113,12 @@ class CameraViewModel : ViewModel(){
                     }
                 }
 
-                fdLogTxt.postValue("faceDetector : ${result.log.fdInferenceTime}ms")
                 totalInferenceTime += result.log.fdInferenceTime
                 result.log.frInferenceTime?.let { frInfTime->
-                    frLogTxt.postValue("featureExtractor : ${frInfTime}ms")
                     totalInferenceTime += frInfTime
-                } ?: run {
-                    frLogTxt.postValue("")
                 }
 
+                infLogTimeTxt.postValue("Inference Time : $totalInferenceTime")
                 fpsLogTxt.postValue("FPS : ${round(1000f/totalInferenceTime).toInt()}")
 
             }

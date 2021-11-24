@@ -28,8 +28,7 @@ class InferenceViewModel(application: Application) : AndroidViewModel(applicatio
     val currentBitmap = MutableLiveData<Bitmap>()
     val facialData = MutableLiveData<List<FacialProcess.Result>>()
     val registerFacialFeature = MutableLiveData<FacialFeature>()
-    val fdLogTxt = MutableLiveData("")
-    val frLogTxt = MutableLiveData("")
+    val infTimeLogTxt = MutableLiveData("")
 
     /* Load sample images */
     fun loadFiles(files: Array<String>?){
@@ -109,17 +108,21 @@ class InferenceViewModel(application: Application) : AndroidViewModel(applicatio
 
         val inference :(bitmap: Bitmap)->Unit = { it->
             FacialProcess.inference(it, true) { results ->
+
+                var totalInferenceTime = 0L
+
                 facialData.postValue(results)
                 results.forEach { result ->
-                    fdLogTxt.postValue("faceDetector : ${result.log.fdInferenceTime}ms")
+                    totalInferenceTime += result.log.fdInferenceTime
                     result.log.frInferenceTime?.let { frInfTime ->
-                        frLogTxt.postValue("featureExtractor : ${frInfTime}ms")
+                        totalInferenceTime += frInfTime
                     }
 
                     result.facialFeature?.let { feature->
                         registerFacialFeature.postValue(feature)
                     }
 
+                    infTimeLogTxt.postValue("Inference Time : $totalInferenceTime")
                 }
                 inferenceLock.set(false)
             }

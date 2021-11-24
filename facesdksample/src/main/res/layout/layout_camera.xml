@@ -83,23 +83,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:background="@android:color/white"
-            android:text="@{viewModel.fdLogTxt}"
+            android:text="@{viewModel.infLogTimeTxt}"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="20sp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_fps" />
 
-        <TextView
-            android:id="@+id/tv_inference_fr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:background="@android:color/white"
-            android:text="@{viewModel.frLogTxt}"
-            android:textColor="@android:color/holo_orange_light"
-            android:textSize="20sp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_inference_fd" />
 
         <RadioGroup
             android:id="@+id/rg_strategy"

@@ -49,7 +49,7 @@ class CameraXView(context: Context, private val cameraPacing: CameraSelector,
 
             imageAnalysis.setAnalyzer(
                 cameraExecutor,
-                BitmapAnalyzer(bitmapCallback)
+                BitmapAnalyzer(cameraPacing ,bitmapCallback)
             )
 
             try {
@@ -65,12 +65,12 @@ class CameraXView(context: Context, private val cameraPacing: CameraSelector,
     }
 
     /* CameraX API Analyzer - frame image -> Bitmap return */
-    class BitmapAnalyzer(private val bitmapCallback:(bitmap: Bitmap)->Unit) : ImageAnalysis.Analyzer {
+    class BitmapAnalyzer(private val cameraPacing: CameraSelector ,private val bitmapCallback:(bitmap: Bitmap)->Unit) : ImageAnalysis.Analyzer {
 
         @ExperimentalGetImage
         override fun analyze(image: ImageProxy) {
             image.image?.let {
-                val bitmap = rotateImage(it.toBitmap(), image.imageInfo.rotationDegrees)
+                val bitmap = rotateImage(it.toBitmap(), image.imageInfo.rotationDegrees, cameraPacing)
                 bitmapCallback(bitmap)
             }
             image.close()
@@ -100,10 +100,16 @@ class CameraXView(context: Context, private val cameraPacing: CameraSelector,
             return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
         }
 
-        private fun rotateImage(img: Bitmap, degree: Int): Bitmap {
+        private fun rotateImage(img: Bitmap, degree: Int, cameraSelector: CameraSelector): Bitmap {
             val matrix = Matrix()
-            matrix.setScale(-1f,1f)
-            matrix.postRotate(360-degree.toFloat())
+
+            if(cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA){
+                matrix.postRotate(degree.toFloat())
+            }else {
+                matrix.setScale(-1f,1f)
+                matrix.postRotate(360-degree.toFloat())
+            }
+
             val rotatedImg =
                 Bitmap.createBitmap(img, 0, 0, img.width, img.height, matrix, false)
             img.recycle()
