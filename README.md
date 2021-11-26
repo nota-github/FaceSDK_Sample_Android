@@ -64,11 +64,20 @@ class Sample {
   
 ### Initialization
 SDK initialization must be done before any usage. Use of the SDK without initialization may and will invoke errors or unexpected results that Nota will not be held responsible for.<br/>
+Put the issued SDK key in AndroidManifest.xml.<br/>
 (Paid License) Provide License Key issued for SDK initialization.<br/>
 (Demo License) SDK will only be available for the pre-negotiated duration<br/>
 
+```xml
+<application>
+    ...
+    <meta-data android:name="nota_license_key" android:value="$license_key"/>
+    ...
+</application>
+```
+
 ```kotlin
-NotaFaceSDK.initialize(context, key)
+NotaFaceSDK.initialize(context)
 ```
 <br/> <br/>
 

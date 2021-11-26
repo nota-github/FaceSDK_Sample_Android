@@ -58,8 +58,16 @@ class Sample {
   
 ### Initialization
 SDK 사용을 위해선, SDK 초기화가 우선적으로 이뤄져야한다. SDK 초기화 없이 활용되는 기능오류를 발생시킬 수 있다.  
-(유료 라이센스 기준) SDK 초기화를 위해선, 사전에 Nota에서 발급한 라이센스 키를 입력하여야 한다.  
+(유료 라이센스 기준) SDK 초기화를 위해선, 사전에 Nota에서 발급한 라이센스 키를 AndroidManifest.xml에 입력하여야 한다.
 (데모 라이센스 기준) 사전에 협의가 된 기간내에만 SDK 초기화가 가능하다
+
+```xml
+<application>
+    ...
+    <meta-data android:name="nota_license_key" android:value="$license_key"/>
+    ...
+</application>
+```
 
 ```kotlin
 NotaFaceSDK.initialize(context, key)
