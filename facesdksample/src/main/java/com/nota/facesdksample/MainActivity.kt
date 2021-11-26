@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -31,6 +32,25 @@ class MainActivity : AppCompatActivity() {
                 REQUIRED_PERMISSIONS,
                 REQUEST_CODE_PERMISSIONS
             )
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>, grantResults:
+        IntArray
+    ) {
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (allPermissionsGranted())  {
+                init()
+
+                val transaction =  supportFragmentManager.beginTransaction()
+                transaction.add(R.id.layout_root, inferenceFragment)
+                transaction.commit()
+            }else{
+                // Close the app when permission is denied
+                Toast.makeText(this, "권한 거절됨.", Toast.LENGTH_SHORT).show()
+                finish()
+            }
         }
     }
 

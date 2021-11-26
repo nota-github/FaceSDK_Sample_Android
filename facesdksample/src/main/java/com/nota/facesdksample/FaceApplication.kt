@@ -10,6 +10,6 @@ class FaceApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         // SDK Init
-        NotaFaceSDK.initialize(this, "key")
+        NotaFaceSDK.initialize(this)
     }
 }

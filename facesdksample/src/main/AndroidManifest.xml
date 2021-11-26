@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data android:name="nota_license_key" android:value="put your license key here"/>
     </application>
 
 </manifest>
