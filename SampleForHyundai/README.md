@@ -2,12 +2,13 @@
 노타의 안드로이드용 안면인식 SDK
 
 ## License
-노타에서 제공하는 데모 라이센스는 6개월 시용기간을 제공하고 있다  
+노타에서 제공하는 데모 라이센스는 3개월 시용기간을 제공하고 있다  
 
   
 ## Features
 SDK에서 제공되는 기능은 아래와 같다 :
-* 안면인식 : 얼굴을 인식해 특징을 추출. 특징은 float array로 표현된다
+* 얼굴감지 : 이미지에서 얼굴을 인식, 얼굴의 위치와 눈코입의 위치, 마스크 착용여부, Spoofing 여부 등을 검출한다.
+* 얼굴특징추출 : 검출된 얼굴 이미지에서 특징 추출을 추출한다. 
 * 특징비교 : 2개의 얼굴 특징을 비교해 유사도를 도출한다
 
 
@@ -19,8 +20,8 @@ SDK에서 제공되는 기능은 아래와 같다 :
 ## Usage
 노타 안면인식 SDK는 아래와 같은 순서로 작동한다 : 
 1. [`SDK 초기화`](#initialization)
-2. [`FaceRecognition` 초기화](#FaceRecognition)
-3. 생성한 FaceRecognition에 얼굴 사진을 입력 -> 도출된 특징 저장
+2. `FacialProcess` 객체의 detectFace() 메서드 사용하여 얼굴 이미지 추출
+3. `FacialProcess` 객체의 featureExtract() 메서드에 FaceRecognition에 얼굴 이미지 입력 -> 도출된 특징 저장
 4. [(저장된)안면 특징들을 비교해 `유사도 도출`](#featurecomparison)
   
    
@@ -30,29 +31,33 @@ SDK에서 제공되는 기능은 아래와 같다 :
 class Sample {
     // SDK initialization
     init{
-        NotaFaceSDK.initialize(context, key)
+        NotaFaceSDK.initialize(context)
     } 
     
     ...
     
-    // FaceRecognition initialization
-    private val faceRecognition = FaceRecognition.getClient(FaceRecognitionOption.Builder().build())
+    // Detect Face
+    FacialProcess.detectFace(bitmap, inferenceOption) { result ->
                 
     ...
     
-    // Extract features from a given bitmap
-    private fun recognizeFace(@NonNull var1 : Bitmap) : FloatArray {
-        return faceRecognition.recognize(var1)
     }
     
+    // Extract features from a given bitmap
+    FacialProcess.featureExtract(detectedFaceBitmap) { result ->
+    
     ...
+    
+    }
     
     // Compare features and get degree of similarity
-    private fun compareFeatures(@NonNull feature1 : FloatArray, @NonNull feature2 : FloatArray) : Double {
-        return feature1.isSimilar(feature2)
+    if( facialFeature.isIdentical(anotherFaicalFeature) ) {
+    
+    // isCorrect
+    ...
+    
     }
     
-    ...
 }
 
 ```
@@ -68,51 +73,52 @@ NotaFaceSDK.initialize(context, key)
   
 ### FaceRecognition
 FaceRecognition을 사용하기 위해선 [`SDK 초기화`](#initialization)가 되어 있어야 한다.
-FaceRecognition는 노타에서 제공하는 옵션들을 사용해 생성할 수 있다. 현재 노타의 안면인식 솔루션에서 제공하는 옵션은 이와 같다 [here](#facerecognitionoption)
-안면인식에 대한 결과는 FaceRecognition에 callback를 이용해 얻어올 수 있다. 성공적인 안면인식이 된 경우 [Recognition](#recognition) 객체가 반환된다
+FaceRecognition는 노타에서 제공하는 옵션들을 사용해 생성할 수 있다. 현재 노타의 안면인식 솔루션에서 제공하는 옵션은 이와 같다 [here](#FacialProcess.Option)
+안면인식에 대한 결과는 FaceRecognition에 callback를 이용해 얻어올 수 있다. 성공적인 안면인식이 된 경우 [FacialProcess.FaceDetectResult](#FaceDetectResult) 객체가 반환된다
   
 ```kotlin
-private val recogOption = FaceRecognitionOption.Builder().build()
+private val inferenceOption =
+                FacialProcess.Option(
+                    isCheckBlurScore = true,
+                    isDetectMask = true,
+                    isDetectSpoof = true
+                )
 
-val faceRecognitionTask = FaceRecognitionTask.getClient(recogOption)
-
+FacialProcess.detectFace(bitmap, inferenceOption) { result ->
 /**
- * Attaching callbacks to the FaceRecognitionTask
+ * Attaching callbacks to the Detect Face Task
  */
- ...
  
-faceRecognitionTask.addOnCompleteListener(object : OnRecognitionCompleteListener {
-      override fun onComplete(rslt: RecognitionResult, var1: FaceRecognition?) {
-           // TODO apply custom operation onces recognition is completed
-      }
-})
- 
+  ...
+
+}
 ```
   
-#### FaceRecognitionOption
 
-```kotlin
-val faceRecognitionOption = FaceRecognitionOption.Builder().build()
-
-```
   
   
 ## Data
-### Recognition
-Recognition은 안면인식 SDK 에서 사용하는 데이터 클래스이다. FaceRecognitionOption 생성시 부여한 옵션에 의해 몇몇 값들 (설정값이 false인 경우)은 null로 반환될 수가 있다.
-Recognition에서 사용하는 [Face](#face) 에는 눈, 코, 등의 좌표와 얼굴 Bounding box의 위치가 있다.
-```kotlin
-data class Recognition(@Nullable var face           : Face? = null,
-                       @Nullable var feature        : FacialFeature? = null,
-                       @NonNull  val originalBitmap : Bitmap)
-```
 
+### FacialProcess.FaceDetectResult
+FaceDetectResult은 안면인식 SDK 에서 사용하는 데이터 클래스이다. FacialProcess.Option 생성시 부여한 옵션에 의해 몇몇 값들 (설정값이 false인 경우)은 null로 반환될 수가 있다.
+[Face](#face) 에는 눈, 코, 등의 좌표와 얼굴 Bounding box의 위치가 있다.
+```kotlin
+data class FaceDetectResult(val face: Face?, val detectedFaceBitmap: Bitmap, val isSpoof:Boolean? = null, val isMaskDetected:Boolean? = null, val faceQuality:Double? = null, val blurScore:Double?=null, val inferenceTimeLog: Long)
+
+```
 
 ### Face
 Face 데이터 클래스
 ```kotlin
 data class Face(@NonNull val loc : RectF, @NonNull val landmarks : List<PointF>)
 ```
+
+### FacialProcess.FeatureExtractResult
+FacialProcess.FeatureExtractResult은 안면인식 SDK 에서 사용하는 데이터 클래스이다. 얼굴 유사도 검출에 사용하는 [FacialFeature](#FacialFeature) 객체를 반환한다.
+```kotlin
+data class FeatureExtractResult(val facialFeature: FacialFeature, val inferenceTimeLog: Long)
+```
+
 
 #### Feature Comparison
 두개의 feature를 비교해 유사도를 도출한다. 권장하는 유사도는 0.65점으로, 권장 유사도 이상의 유사도를 지닌 두개의 얼굴은 동일한 인물이라고 판별하는걸 권장한다.
@@ -121,12 +127,12 @@ data class Face(@NonNull val loc : RectF, @NonNull val landmarks : List<PointF>)
 /**
  * If smilarity is above that of threshold, then we consider two features to be identical
  */
-fun isIdentical(var1 : FacialFeature, threshold : Double = 0.65) : Boolean
+FacialFeature.fun isIdentical(var1 : FacialFeature, threshold : Double = 0.65) : Boolean
 
 /**
  * Gets similarity between two facial features
  */
-fun getSimilarity(var1 : FacialFeature) : Double
+FacialFeature.fun getSimilarity(var1 : FacialFeature) : Double
 
 ```
 
