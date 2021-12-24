@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nota.hyundai_lobby.ui.viewmodel.CameraViewModel" />
+
+        <import type="com.nota.hyundai_lobby.ui.viewmodel.CameraViewModel.State"/>
+        <import type="android.view.View" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CameraActivity">
+
+        <FrameLayout
+            android:id="@+id/camera_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/iv_guide2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/guide_active"
+                android:scaleType="centerInside"
+                android:visibility="@{viewModel.currentState == State.RECOGNITION ? View.VISIBLE : View.GONE}" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/bt_switch_camera"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Switch Camera"
+            android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
+            android:onClick="@{viewModel.onClickSwitchCamera()}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bt_regi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="registration"
+            android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
+            android:onClick="@{viewModel.startRegisterUser()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_switch_camera"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_regi"
+            android:id="@+id/ll_options"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mask Detection"
+                android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
+                android:checked="@={viewModel.isDetectMask()}"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spoofing Detection"
+                android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
+                android:checked="@={viewModel.isDetectSpoof()}"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BlurScore Check"
+                android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
+                android:checked="@={viewModel.isCheckBlurScore()}"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_enter"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Enter"
+            android:alpha="0.7"
+            android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
+            app:layout_constraintTop_toBottomOf="@id/ll_options"
+            android:onClick="@{viewModel.startUserVerification()}"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/enter_bg"
+            android:text="Welcome"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/iv_enter"
+            android:visibility="@{viewModel.currentState == State.ENTER ? View.VISIBLE : View.GONE}"
+            />
+
+        <ImageView
+            android:id="@+id/iv_guide"
+            android:visibility="@{viewModel.currentState == State.REGISTRATION ? View.VISIBLE : View.GONE}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/guide_normal" />
+
+
+        <ImageView
+            loadBitmapImage="@{viewModel.imgLog}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHeight_percent="0.24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="horizontal"
+            android:adapter="@{viewModel.debugImageAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <Button
+            android:id="@+id/bt_users"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="users"
+            android:onClick="@{viewModel.showUserManagementDialog()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/bt_enter_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="enter log"
+            android:onClick="@{viewModel.showEnterManagementLogDialog()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_users"/>
+
+        <Button
+            android:id="@+id/bt_intruders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="intruders"
+            android:onClick="@{viewModel.showIntruderManagementLogDialog()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_enter_log"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

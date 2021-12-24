@@ -1,0 +1,3 @@
+include ':hyundai_door'
+include ':hyundai_lobby'
+//rootProject.name = "nota_vision_sdk"
