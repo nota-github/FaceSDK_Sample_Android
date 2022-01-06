@@ -135,7 +135,7 @@ data class Face(@NonNull val loc : RectF, @NonNull val landmarks : List<PointF>)
 
 ### FacialProcess.FeatureExtractResult
 FacialProcess.FeatureExtractResult은 안면인식 SDK 에서 사용하는 데이터 클래스이다.  
-얼굴 유사도 검출에 사용하는 [FacialFeature](####featurecomparison) 객체를 반환한다.  
+얼굴 유사도 검출에 사용하는 [FacialFeature](#featurecomparison) 객체를 반환한다.  
 ```kotlin
 data class FeatureExtractResult(val facialFeature: FacialFeature, val inferenceTimeLog: Long)
 ```
