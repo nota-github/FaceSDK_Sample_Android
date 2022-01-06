@@ -50,8 +50,14 @@ class HttpRepository {
                     call: Call<ResponseBody>,
                     response: Response<ResponseBody>
                 ) {
-                    onSuccess(Gson().fromJson(JSONObject(response.body()!!.string())["members"].toString()
-                        , object : TypeToken<ArrayList<User>>(){}.type))
+
+                    response.body()?.let {
+                        onSuccess(Gson().fromJson(JSONObject(it.string())["members"].toString()
+                            , object : TypeToken<ArrayList<User>>(){}.type))
+                    } ?: run {
+                        onSuccess(arrayListOf())
+                    }
+
                 }
 
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -130,8 +136,13 @@ class HttpRepository {
                     response: Response<ResponseBody>
                 ) {
                     if(response.isSuccessful){
-                        onSuccess(Gson().fromJson(JSONObject(response.body()!!.string())["history"].toString()
-                            , object : TypeToken<ArrayList<EnterLog>>(){}.type))
+
+                        response.body()?.let {
+                            onSuccess(Gson().fromJson(JSONObject(it.string())["history"].toString()
+                                , object : TypeToken<ArrayList<EnterLog>>(){}.type))
+                        } ?: run {
+                            onSuccess(arrayListOf())
+                        }
                     }else{
                         Log.d("","")
                     }
@@ -158,8 +169,13 @@ class HttpRepository {
                     response: Response<ResponseBody>
                 ) {
                     if(response.isSuccessful){
-                        onSuccess(Gson().fromJson(JSONObject(response.body()!!.string())["intruders"].toString()
-                            , object : TypeToken<ArrayList<Intruder>>(){}.type))
+                        response.body()?.let {
+                            onSuccess(Gson().fromJson(JSONObject(it.string())["intruders"].toString()
+                                , object : TypeToken<ArrayList<Intruder>>(){}.type))
+                        } ?: run {
+                            onSuccess(arrayListOf())
+                        }
+
                     }else{
                         Log.d("","")
                     }

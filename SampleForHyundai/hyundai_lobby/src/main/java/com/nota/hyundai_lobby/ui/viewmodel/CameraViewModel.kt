@@ -74,6 +74,12 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
             }
         }
 
+    fun updateUserList(){
+        HttpRepository.getInstance().getUsers { userList ->
+            registrationUserList = userList
+        }
+    }
+
     // 카메라 프레임이 들어올 때 마다 실행
     fun getCameraFrame(bitmap: Bitmap) {
 
@@ -141,9 +147,7 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                         State.RECOGNITION -> {
 
                             if(registrationUserList == null){
-                                HttpRepository.getInstance().getUsers {
-                                    registrationUserList = it
-                                }
+                                updateUserList()
                             }
 
                             imgLog.value = detectedFaceBitmap
@@ -199,6 +203,7 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
 
             HttpRepository.getInstance().regUser(User(name = userName, dong = dong, ho = ho), face = it, onSuccess = {
                     toastMessage.value = "Registration Success."
+                    updateUserList()
                 }, onFailure = {
                     toastMessage.value = "Registration Failed."
                 }

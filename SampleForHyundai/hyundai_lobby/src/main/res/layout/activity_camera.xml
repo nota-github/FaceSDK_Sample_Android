@@ -35,17 +35,6 @@
         </FrameLayout>
 
         <Button
-            android:id="@+id/bt_switch_camera"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Switch Camera"
-            android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
-            android:onClick="@{viewModel.onClickSwitchCamera()}"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
             android:id="@+id/bt_regi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,7 +43,7 @@
             android:enabled="@{viewModel.currentState == State.IDLE ? true : false}"
             android:onClick="@{viewModel.startRegisterUser()}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bt_switch_camera"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

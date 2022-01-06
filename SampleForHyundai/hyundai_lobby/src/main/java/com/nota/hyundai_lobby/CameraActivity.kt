@@ -103,6 +103,8 @@ class CameraActivity : AppCompatActivity(),
     }
 
     private fun adaptOnActivity() {
+        viewModel.updateUserList()
+
         viewModel.toastMessage.observe(this) {
             if (it != "") {
                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
