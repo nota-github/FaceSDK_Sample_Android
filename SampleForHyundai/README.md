@@ -22,7 +22,7 @@ SDK에서 제공되는 기능은 아래와 같다 :
 1. [`SDK 초기화`](#initialization)
 2. `FacialProcess` 객체의 detectFace() 메서드 사용하여 얼굴 이미지 추출
 3. `FacialProcess` 객체의 featureExtract() 메서드에 FaceRecognition에 얼굴 이미지 입력 -> 도출된 특징 저장
-4. [(저장된)안면 특징들을 비교해 `유사도 도출`](#featurecomparison)
+4. (저장된)안면 특징들을 비교해 [`유사도 도출`](####Feature Comparison)
   
    
      
@@ -65,16 +65,18 @@ class Sample {
 ### Initialization
 SDK 사용을 위해선, SDK 초기화가 우선적으로 이뤄져야한다. SDK 초기화 없이 활용되는 기능오류를 발생시킬 수 있다.  
 (유료 라이센스 기준) SDK 초기화를 위해선, 사전에 Nota에서 발급한 라이센스 키를 입력하여야 한다.
-(데모 라이센스 기준) 사전에 협의가 된 기간내에만 SDK 초기화가 가능하다
+(데모 라이센스 기준) 사전에 협의가 된 기간내에만 SDK 초기화가 가능하다.
 
 ```kotlin
 NotaFaceSDK.initialize(context, key)
 ```
   
-### FaceRecognition
-FaceRecognition을 사용하기 위해선 [`SDK 초기화`](#initialization)가 되어 있어야 한다.
-FaceRecognition는 노타에서 제공하는 옵션들을 사용해 생성할 수 있다. 현재 노타의 안면인식 솔루션에서 제공하는 옵션은 이와 같다 [here](#FacialProcess.Option)
-안면인식에 대한 결과는 FaceRecognition에 callback를 이용해 얻어올 수 있다. 성공적인 안면인식이 된 경우 [FacialProcess.FaceDetectResult](#FaceDetectResult) 객체가 반환된다
+### Detect Face
+Parameter 로 전달된 Bitmap 타입의 이미지에서 얼굴을 검출하는 Task 를 수행한다.
+Detect Face 메서드를 사용하기 위해선 [`SDK 초기화`](#initialization)가 되어 있어야 한다.
+Option 객체를 Parameter 로 전달하여 얼굴 인식에 소요되는 시간을 조절할 수 있다.
+안면인식에 대한 결과는 callback 람다 함수를 이용해 얻어올 수 있다.
+성공적인 안면인식이 된 경우 [FacialProcess.FaceDetectResult](###FacialProcess.FaceDetectResult) 객체가 반환된다.
   
 ```kotlin
 private val inferenceOption =
@@ -94,9 +96,24 @@ FacialProcess.detectFace(bitmap, inferenceOption) { result ->
 }
 ```
   
+### Feature Extract
+Parameter 로 전달된 Bitmap 타입의 이미지에서 얼굴의 특징을 추출하는 Task 를 수행한다.
+Feature Extract 메서드를 사용하기 위해선 [`SDK 초기화`](#initialization)가 되어 있어야 한다.
+Input Parameter 는 [Detect Face](###Detect Face) 메서드의 Callback 리턴값인
+[FacialProcess.FaceDetectResult](###FacialProcess.FaceDetectResult) 객체의 detectedFaceBitmap 을 사용하는 것을 권장한다.
+얼굴 특징 추출 결과는 callback 람다 함수를 이용해 얻어올 수 있다.
+얼굴 특징이 완료된 경우 [FacialProcess.FeatureExtractResult](###FacialProcess.FeatureExtractResult) 객체가 반환된다.
 
-  
-  
+```kotlin
+FacialProcess.featureExtract(faceDetectResult.detectedFaceBitmap){ result ->
+
+  /**
+   * Attaching callbacks to the Feature Extract Task
+   */
+
+}
+```
+
 ## Data
 
 ### FacialProcess.FaceDetectResult
@@ -108,13 +125,15 @@ data class FaceDetectResult(val face: Face?, val detectedFaceBitmap: Bitmap, val
 ```
 
 ### Face
-Face 데이터 클래스
+검출된 얼굴의 정보가 담긴 데이터 클래스이다.
+loc 객체는 얼굴의 위치, landmarks 객체는 얼굴의 눈 코 입 위치 정보를 가지고 있다.
+
 ```kotlin
 data class Face(@NonNull val loc : RectF, @NonNull val landmarks : List<PointF>)
 ```
 
 ### FacialProcess.FeatureExtractResult
-FacialProcess.FeatureExtractResult은 안면인식 SDK 에서 사용하는 데이터 클래스이다. 얼굴 유사도 검출에 사용하는 [FacialFeature](#FacialFeature) 객체를 반환한다.
+FacialProcess.FeatureExtractResult은 안면인식 SDK 에서 사용하는 데이터 클래스이다. 얼굴 유사도 검출에 사용하는 [FacialFeature](####Feature Comparison) 객체를 반환한다.
 ```kotlin
 data class FeatureExtractResult(val facialFeature: FacialFeature, val inferenceTimeLog: Long)
 ```
