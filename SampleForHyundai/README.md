@@ -100,9 +100,9 @@ FacialProcess.detectFace(bitmap, inferenceOption) { result ->
 Parameter 로 전달된 Bitmap 타입의 이미지에서 얼굴의 특징을 추출하는 Task 를 수행한다.  
 Feature Extract 메서드를 사용하기 위해선 [`SDK 초기화`](#initialization)가 되어 있어야 한다.  
 Input Parameter 는 [Detect Face](#detect-face) 메서드의 Callback 리턴값인. 
-[FacialProcess.FaceDetectResult](#facialProcess.facedetectresult) 객체의 detectedFaceBitmap 을 사용하는 것을 권장한다.  
+[FacialProcess.FaceDetectResult](#facialprocess.facedetectresult) 객체의 detectedFaceBitmap 을 사용하는 것을 권장한다.  
 얼굴 특징 추출 결과는 callback 람다 함수를 이용해 얻어올 수 있다.  
-얼굴 특징이 완료된 경우 [FacialProcess.FeatureExtractResult](#facialProcess.featureextractresult) 객체가 반환된다.  
+얼굴 특징이 완료된 경우 [FacialProcess.FeatureExtractResult](#facialprocess.featureextractresult) 객체가 반환된다.  
 
 ```kotlin
 FacialProcess.featureExtract(faceDetectResult.detectedFaceBitmap){ result ->
