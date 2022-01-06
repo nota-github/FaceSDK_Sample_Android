@@ -141,7 +141,7 @@ data class FeatureExtractResult(val facialFeature: FacialFeature, val inferenceT
 ```
 
 
-#### FeatureComparison
+### FeatureComparison
 두개의 feature를 비교해 유사도를 도출한다.  
 권장하는 유사도는 0.65점으로, 권장 유사도 이상의 유사도를 지닌 두개의 얼굴은 동일한 인물이라고 판별하는걸 권장한다.  
 
