@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.tensorflow:tensorflow-android:1.13.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/edafedcf00122dedc02b9fb434a0b2af/transformed/jetified-tensorflow-android-1.13.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/edafedcf00122dedc02b9fb434a0b2af/transformed/jetified-tensorflow-android-1.13.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/edafedcf00122dedc02b9fb434a0b2af/transformed/jetified-tensorflow-android-1.13.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

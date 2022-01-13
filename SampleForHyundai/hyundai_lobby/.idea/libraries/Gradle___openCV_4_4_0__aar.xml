@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :openCV_4.4.0:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5e302759ef6f3c8e21f91eddd3d5c465/transformed/jetified-openCV_4.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5e302759ef6f3c8e21f91eddd3d5c465/transformed/jetified-openCV_4.4.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5e302759ef6f3c8e21f91eddd3d5c465/transformed/jetified-openCV_4.4.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

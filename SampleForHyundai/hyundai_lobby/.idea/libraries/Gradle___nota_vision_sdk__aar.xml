@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: :nota_vision_sdk:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/35c9f28a506851f01925de346731eb9b/transformed/jetified-nota_vision_sdk/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/35c9f28a506851f01925de346731eb9b/transformed/jetified-nota_vision_sdk/jars/libs/chaquopy_java-10.0.1.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35c9f28a506851f01925de346731eb9b/transformed/jetified-nota_vision_sdk/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35c9f28a506851f01925de346731eb9b/transformed/jetified-nota_vision_sdk/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

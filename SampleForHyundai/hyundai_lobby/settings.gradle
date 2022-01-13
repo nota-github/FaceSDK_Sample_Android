@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "hyundai_lobby"

@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="hyundai_door/src/main/res/layout/activity_camera.xml" value="0.1948853615520282" />
+        <entry key="hyundai_door/src/main/res/layout/dialog_confirm_user.xml" value="0.25878220140515223" />
+        <entry key="hyundai_door/src/main/res/layout/dialog_guide.xml" value="0.67" />
+        <entry key="hyundai_door/src/main/res/layout/listitem_debug_image.xml" value="0.3453125" />
         <entry key="hyundai_lobby/src/main/res/layout/activity_camera.xml" value="0.19630192502532928" />
       </map>
     </option>

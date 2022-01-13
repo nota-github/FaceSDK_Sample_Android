@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.kotlinx:multik-native:0.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/multik-native/0.0.1/94c745e18224483a048e86dadbee8956653d088f/multik-native-0.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/multik-native/0.0.1/ff8f0481a62787e4e12f769c8f7a14f7ca4b9315/multik-native-0.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/multik-native/0.0.1/936729ad44bfa01e02a6379d61f93c96ff46bf91/multik-native-0.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

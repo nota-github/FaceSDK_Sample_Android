@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.kotlinx:multik-api:0.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/multik-api/0.0.1/62af49bcb277c72eb1a2b551f927c12c093d48e1/multik-api-0.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/multik-api/0.0.1/594831eff41f8159414d6c1f7d0f5291978735a3/multik-api-0.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/multik-api/0.0.1/4501a6eb5041e0ee7bc8479f4f2cc9f981d364b5/multik-api-0.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

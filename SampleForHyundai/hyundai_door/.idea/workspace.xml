@@ -1,171 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="220daa4d-ce51-48d2-9886-a173f713456b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README_kr.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/README_kr.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/androidTest/java/com/nota/facesdksample/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Baek Hyeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/BeomGyu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Cha EunWoo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Chloe Moretz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/DO.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/DaHyun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/DoYoung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Gang Hodong.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Gang SeulGi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Go YounJung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/GyuHyeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Ha JungWoo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Han ChaeYoung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Han HyoJu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Han JiMin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Han SeungYeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Han SoHee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Han YeSeul.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Heo YoungJi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/HyunBin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/IU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Irene.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/JaeHyeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Jang Minho.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Jang WonYoung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Jennie.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/JiMin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Jisu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Jung HaeIn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/JungWoo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kai.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim Beom.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim Gura.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim MinGyu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim SeJung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim SoYeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim SunHo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim TaeHee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Kim TaeRi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lee ByungHun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lee CheongAh.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lee JeHoon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lee JungJae.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lee NaEun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lim SiWan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Lucas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Ma DongSuk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Mingi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/MoMo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/NaYeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Nam GoongMin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park BoYoung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park GyuYoung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park HyeSu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park HyungSik.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park JiHoon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park MinYoung.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Park ShinHye.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Rose.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Rown.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Ryu SeungBeom.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/RyuJin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/SangHyeok.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Satomi Ishihara.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Scarlett Johansson.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Seo HyunJin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Seo YeJi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Seo hyun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/SeoJun.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Seol Hyun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Shin HyeSun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Shownu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Shuhua.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Son DamBi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Son Gain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Son NaEun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Song HyeGyo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Song JungGi.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/SongGang.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/SuJin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Sugar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Suho.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/SunWoo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/SungChan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/TaeHyun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/TaeYeon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/TaeYong.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Tom Holland.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/V.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Wonho.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/XiuMin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/YeJi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/YeonJun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Yoo ByungJae.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Yoon JungHan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/YoungHoon.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Yuna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Yuqi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/assets/faces/Yuri.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/FaceApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/ThreadStrategy.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/fragment/CameraFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/fragment/InferenceFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/view/CameraXView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/view/OverlayView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/viewmodel/CameraViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/java/com/nota/facesdksample/viewmodel/InferenceViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/drawable/auth_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/layout/layout_camera.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/layout/layout_inference.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../facesdksample/src/test/java/com/nota/facesdksample/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../settings.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/DataBinding.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/GuideDialog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/VisitorConfirmDialog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/dialog_confirm_visitor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/dialog_guide.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidTest/java/com/nota/hyundai_door/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/CameraActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/SingleLiveEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/data/RegistrationRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/data/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/BitmapCallback.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/BitmapUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/ConfirmDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/DataBinding.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/adapter/DebugImageAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/view/CameraView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nota/hyundai_door/ui/viewmodel/CameraViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/add_member.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/door_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/door_bg_without_ui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/enter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/enter_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/enter_center.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/focus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/guide_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/guide_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/message_box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/msg_area.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/red_box.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/target.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_camera.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/dialog_confirm_user.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/listitem_debug_image.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/raw/beep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/xml/network_security_config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nota/hyundai_door/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/androidTest/java/com/nota/hyundai_lobby/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/androidTest/java/com/nota/hyundai_lobby/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/CameraActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/CameraActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/DataBinding.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/SingleLiveEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/SingleLiveEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/data/Auth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/data/Auth.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/data/EnterLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/data/EnterLog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/data/Intruder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/data/Intruder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/data/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/data/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/http/HttpRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/http/HttpRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/http/HttpUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/http/HttpUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/http/HyundaiAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/http/HyundaiAPI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/http/ManagementApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/http/ManagementApiClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/http/UnsafeOkHttpClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/http/UnsafeOkHttpClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/BitmapCallback.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/BitmapCallback.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/BitmapUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/BitmapUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/ConfirmDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/MemberConfirmDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/EnterLogManagementDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/EnterLogManagementDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/IntruderLogManagementDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/IntruderLogManagementDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/UserManagementDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/UserManagementDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/adapter/DebugImageAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/adapter/DebugImageAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/adapter/HistoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/adapter/HistoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/adapter/IntruderAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/adapter/IntruderAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/adapter/UserAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/adapter/UserAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/view/CameraView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/view/CameraView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/java/com/nota/hyundai_lobby/ui/viewmodel/CameraViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/java/com/nota/hyundai_lobby/ui/viewmodel/CameraViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/add_member.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/add_member.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/button_intruder.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/button_intruder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/button_list.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/button_list.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/button_record.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/button_record.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/button_reg.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/button_reg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/door_bg_without_ui.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/door_bg_without_ui.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/enter.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/enter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/enter_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/enter_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/enter_center.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/enter_center.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/guide_active.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/guide_active.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/guide_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/guide_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/message_box.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/message_box.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/msg_area.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/msg_area.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/red_box.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/red_box.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/drawable/target.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/drawable/target.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/activity_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/activity_camera.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/dialog_confirm_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/dialog_confirm_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/dialog_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/dialog_management.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/listitem_debug_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/listitem_debug_image.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/listitem_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/listitem_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/listitem_intruder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/listitem_intruder.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/layout/listitem_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/layout/listitem_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/raw/beep.wav" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/raw/beep.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hyundai_lobby/src/test/java/com/nota/hyundai_lobby/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../hyundai_lobby/app/src/test/java/com/nota/hyundai_lobby/ExampleUnitTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[24c078a3c30c30070911]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hyundai_door" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hyundai_door" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hyundai_door" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -185,8 +200,67 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="hyundai_door.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -209,5 +283,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

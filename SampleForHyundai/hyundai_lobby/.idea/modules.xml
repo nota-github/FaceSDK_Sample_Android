@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hyundai_lobby.iml" filepath="$PROJECT_DIR$/.idea/modules/hyundai_lobby.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/hyundai_lobby.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/hyundai_lobby.app.iml" />
+    </modules>
+  </component>
+</project>
