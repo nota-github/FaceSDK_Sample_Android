@@ -161,6 +161,16 @@
             android:shadowColor="@color/black"
             android:shadowRadius="2"/>
 
+        <Button
+            android:id="@+id/bt_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"
+            android:text="exit"/>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

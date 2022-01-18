@@ -163,17 +163,9 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                             timerHandler.removeCallbacksAndMessages(null)
                             timerHandler.sendEmptyMessageDelayed(0, 5000)
 
-                            if(registrationUserList == null){
-                                updateUserList()
-                            }
+                            updateUserList()
 
                             imgLog.value = detectedFaceBitmap
-
-                            if (registrationUserList?.size == 0) {
-                                toastMessage.value = "등록된 얼굴이 없습니다."
-                                currentState.value = State.IDLE
-                                return@run
-                            }
 
                             this.isMaskDetected?.let {
                                 if (it) {
@@ -221,7 +213,6 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
             HttpRepository.getInstance()
                 .regUser(User(name = userName, dong = dong, ho = ho), face = it, onSuccess = {
                     toastMessage.value = "관리자 승인 시 등록됩니다."
-                    updateUserList()
                 }, onFailure = {
                     toastMessage.value = "네트워크 연결에 실패하였습니다."
                 })
@@ -246,7 +237,6 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                 .regVisitor(User(name = name, dong = dong, ho = ho),
                     startDate = startDate.value!!, endDate = endDate.value!!, info = info , face = it, onSuccess = {
                     toastMessage.value = "관리자 승인 시 등록됩니다."
-                    updateUserList()
                 }, onFailure = {
                     toastMessage.value = "네트워크 연결에 실패하였습니다."
                 })
@@ -342,6 +332,7 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
 
         if (sortResult.isEmpty()) {
             toastMessage.value = "인증실패: 등록된 사용자가 없습니다."
+            timerHandler.removeCallbacksAndMessages(null)
             return
         }
 
@@ -353,6 +344,7 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                 timerHandler.removeCallbacksAndMessages(null)
             } else {
                 toastMessage.value = "인증 실패: 사용자가 아닙니다."
+                timerHandler.removeCallbacksAndMessages(null)
             }
         }
 

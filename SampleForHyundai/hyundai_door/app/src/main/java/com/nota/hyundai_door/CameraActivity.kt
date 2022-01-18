@@ -44,6 +44,9 @@ class CameraActivity : AppCompatActivity(),
         binding = DataBindingUtil.setContentView(this, R.layout.activity_camera)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        binding.btExit.setOnClickListener {
+            finish()
+        }
         RegistrationRepository.createInstance(this)
 
         if (allPermissionsGranted()) {

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nota.hyundai_lobby.R
 import com.nota.hyundai_lobby.data.Intruder
+import com.nota.hyundai_lobby.http.GlideApp
 import com.nota.hyundai_lobby.http.HttpRepository
 import com.nota.hyundai_lobby.http.ManagementApiClient
 import java.util.*
@@ -44,7 +45,7 @@ class IntruderAdapter(context: Context) : RecyclerView.Adapter<IntruderAdapter.V
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvTimestamp.text = itemList[position].timestamp
-        Glide.with(holder.ivIntruder).load(ManagementApiClient.baseUrl+"/api/intruder_img?img_key=" + itemList[position].img_key).into(holder.ivIntruder)
+        GlideApp.with(holder.ivIntruder).load(ManagementApiClient.baseUrl+"ht/api/intruder_img?img_key=" + itemList[position].img_key).into(holder.ivIntruder)
     }
 
     override fun getItemCount(): Int {

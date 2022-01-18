@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.hardware.Camera
+import android.util.Log
 import android.view.Surface
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.WindowManager
 import com.nota.hyundai_door.ui.BitmapCallback
-import java.io.ByteArrayOutputStream
-import java.io.FileNotFoundException
-import java.io.IOException
+import java.io.*
 import java.lang.RuntimeException
+import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
@@ -33,6 +33,7 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
 
     companion object {
         const val PREVIEW_FORMAT = ImageFormat.NV21
+        val TAG = CameraView::class.java.simpleName
     }
 
     init {
@@ -55,7 +56,7 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
             val params = camera?.parameters
             params?.previewFormat = PREVIEW_FORMAT
             val previewSize = params?.supportedPreviewSizes
-            params?.setPreviewSize(previewSize?.get(0)!!.width, previewSize.get(0)!!.height)
+            params?.setPreviewSize(1920, 1080)
             camera?.parameters = params
 
             camera?.setPreviewCallback(this)
@@ -102,12 +103,14 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
                     orientation = cameraRotation
                 }
 
-                camera?.setDisplayOrientation(orientation)
+                // DoorPhone 카메라 Orientation 대응
+                camera?.setDisplayOrientation(0)
                 camera?.setPreviewDisplay(holder)
 
                 val params = camera?.parameters
                 params?.previewFormat = PREVIEW_FORMAT
                 val previewSize = params?.supportedPreviewSizes
+
                 params?.setPreviewSize(previewSize?.get(0)!!.width, previewSize.get(0)!!.height)
                 camera?.parameters = params
                 camera?.setPreviewCallback(this)
@@ -136,11 +139,12 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
 
         try {
 
+            // DoorPhone 카메라 해상도 대응
             val image = YuvImage(
                 data,
                 camera!!.parameters!!.previewFormat,
-                camera.parameters!!.previewSize.width,
-                camera.parameters!!.previewSize.height,
+                1920,
+                1080,
                 null
             )
             val bos = ByteArrayOutputStream()
@@ -150,12 +154,13 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
             val cropWidthLeft = camera.parameters!!.previewSize.width / 2 - 540
             val cropWidthRight = camera.parameters!!.previewSize.width / 2 + 540
 
+            // DoorPhone 카메라 해상도 대응
             image.compressToJpeg(
                 Rect(
-                    cropWidthLeft,
                     0,
-                    cropWidthRight,
-                    camera.parameters!!.previewSize.height
+                    0,
+                    1920,
+                    1080
                 ), 80,
                 bos
             )
@@ -163,6 +168,7 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
             val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
 
             bitmapListener.toBitmap(bitmap, 0)
+
             duplicateLock.set(false)
 
         } catch (e: FileNotFoundException) {
