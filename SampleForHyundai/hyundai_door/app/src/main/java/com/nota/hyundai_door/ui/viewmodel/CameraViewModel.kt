@@ -27,7 +27,7 @@ class CameraViewModel: ViewModel() {
         const val RECOGNITION_CANDIDATE_COUNT = 5
         const val REGISTRATION_CANDIDATE_COUNT = 10
         const val ENTER_DISPLAY_DELAY = 2000L
-        const val FACE_QUALITY_THRESHOLD = 50
+        const val FACE_QUALITY_THRESHOLD = 200
     }
 
     enum class State {
@@ -123,10 +123,13 @@ class CameraViewModel: ViewModel() {
                             if(candidateFacialDataList.size >= REGISTRATION_CANDIDATE_COUNT){
                                 registrationProcess()
                             } else {
-                                candidateFacialDataList.add(this)
-                                val sorted = candidateFacialDataList.sortByGoodFacialQuality()
-                                val itemList = sorted.toItemList()
-                                debugImageAdapter.replace(itemList)
+                                // 얼굴 가로 사이즈가 30% 이상일 시에만 리스트에 추가
+                                if(this.face!!.rectf.width() > 0.3) {
+                                    candidateFacialDataList.add(this)
+                                    val sorted = candidateFacialDataList.sortByGoodFacialQuality()
+                                    val itemList = sorted.toItemList()
+                                    debugImageAdapter.replace(itemList)
+                                }
                             }
                         }
 
@@ -170,14 +173,22 @@ class CameraViewModel: ViewModel() {
                                 }
                             }
 
+                            this.blurScore?.let {
+                                if (it < FACE_QUALITY_THRESHOLD) {
+                                    return@run
+                                }
+                            }
+
                             if(candidateFacialDataList.size >= RECOGNITION_CANDIDATE_COUNT){
                                 recognitionProcess()
                             }else {
-                                candidateFacialDataList.add(this)
-                                val sorted = candidateFacialDataList.sortByGoodFacialQuality()
-                                val itemList = sorted.toItemList()
-                                debugImageAdapter.replace(itemList)
-
+                                // 얼굴 가로 사이즈가 30% 이상일 시에만 리스트에 추가
+                                if(this.face!!.rectf.width() > 0.3) {
+                                    candidateFacialDataList.add(this)
+                                    val sorted = candidateFacialDataList.sortByGoodFacialQuality()
+                                    val itemList = sorted.toItemList()
+                                    debugImageAdapter.replace(itemList)
+                                }
                             }
 
                         }
@@ -244,6 +255,7 @@ class CameraViewModel: ViewModel() {
         currentState.value = State.REGISTRATION
 
         // 5초간 등록 안될 시 대기상태
+        timerHandler.removeCallbacksAndMessages(null)
         timerHandler.sendEmptyMessageDelayed(0, 5000)
     }
 
@@ -331,6 +343,7 @@ class CameraViewModel: ViewModel() {
                 currentState.value = State.RECOGNITION
 
                 // 5초간 인증 안될 시 대기상태
+                timerHandler.removeCallbacksAndMessages(null)
                 timerHandler.sendEmptyMessageDelayed(0, 5000)
 
             }else if(currentState.value == State.RECOGNITION){

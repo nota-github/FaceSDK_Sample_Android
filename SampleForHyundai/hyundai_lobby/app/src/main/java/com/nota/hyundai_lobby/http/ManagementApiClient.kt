@@ -6,7 +6,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object ManagementApiClient {
 
-    const val baseUrl = "https://notadoor.nota.ai/"
+    const val baseUrl = "http://192.168.0.5/"
     private var instance : Retrofit? = null
 
     fun getInstance() : Retrofit {

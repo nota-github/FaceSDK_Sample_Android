@@ -9,6 +9,7 @@ import android.os.Message
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import androidx.core.graphics.times
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.nota.hyundai_lobby.SingleLiveEvent
@@ -28,7 +29,7 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
         const val RECOGNITION_CANDIDATE_COUNT = 5
         const val REGISTRATION_CANDIDATE_COUNT = 10
         const val ENTER_DISPLAY_DELAY = 2000L
-        const val BLUR_SCORE_THRESHOLD = 50
+        const val BLUR_SCORE_THRESHOLD = 300
     }
 
     enum class State {
@@ -101,7 +102,8 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                 FacialProcess.Option(
                     isCheckBlurScore = isCheckBlurScore.value!!,
                     isDetectMask = isDetectMask.value!!,
-                    isDetectSpoof = isDetectSpoof.value!!
+                    isDetectSpoof = isDetectSpoof.value!!,
+                    isCropOnly = true
                 )
 
             FacialProcess.detectFace(bitmap, inferenceOption) { result ->
@@ -143,10 +145,13 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                             if(candidateFacialDataList.size >= REGISTRATION_CANDIDATE_COUNT){
                                 registrationProcess()
                             } else {
-                                candidateFacialDataList.add(this)
-                                val sorted = candidateFacialDataList.sortByGoodFacialQuality()
-                                val itemList = sorted.toItemList()
-                                debugImageAdapter.replace(itemList)
+                                // 얼굴 가로 사이즈가 30% 이상일 시에만 리스트에 추가
+                                if(this.face!!.rectf.width() > 0.3) {
+                                    candidateFacialDataList.add(this)
+                                    val sorted = candidateFacialDataList.sortByGoodFacialQuality()
+                                    val itemList = sorted.toItemList()
+                                    debugImageAdapter.replace(itemList)
+                                }
                             }
                         }
 
@@ -162,8 +167,6 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
 
                             timerHandler.removeCallbacksAndMessages(null)
                             timerHandler.sendEmptyMessageDelayed(0, 5000)
-
-                            updateUserList()
 
                             imgLog.value = detectedFaceBitmap
 
@@ -181,13 +184,22 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                                 }
                             }
 
+                            this.blurScore?.let {
+                                if (it < BLUR_SCORE_THRESHOLD) {
+                                    return@run
+                                }
+                            }
+
                             if(candidateFacialDataList.size >= RECOGNITION_CANDIDATE_COUNT){
                                 recognitionProcess()
                             }else {
-                                candidateFacialDataList.add(this)
-                                val sorted = candidateFacialDataList.sortByGoodFacialQuality()
-                                val itemList = sorted.toItemList()
-                                debugImageAdapter.replace(itemList)
+                                // 얼굴 가로 사이즈가 30% 이상일 시에만 리스트에 추가
+                                if(this.face!!.rectf.width() > 0.3) {
+                                    candidateFacialDataList.add(this)
+                                    val sorted = candidateFacialDataList.sortByGoodFacialQuality()
+                                    val itemList = sorted.toItemList()
+                                    debugImageAdapter.replace(itemList)
+                                }
                             }
 
                         }
@@ -268,10 +280,8 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
         currentState.value = State.REGISTRATION
 
         // 5초간 등록 안될 시 대기상태
-        Handler{
-            currentState.value = State.IDLE
-            return@Handler true
-        }.sendEmptyMessageDelayed(0, 5000)
+        timerHandler.removeCallbacksAndMessages(null)
+        timerHandler.sendEmptyMessageDelayed(0, 5000)
     }
 
     fun clickRegisterUser() : View.OnClickListener {
@@ -324,6 +334,10 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
 
 
     fun recognitionProcess() {
+
+        // 유저 리스트 업데이트
+        updateUserList()
+
         // 대기 상태로 변경
         currentState.value = State.IDLE
 
@@ -360,10 +374,8 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
                 currentState.value = State.RECOGNITION
 
                 // 5초간 인증 없을 시 대기상태
-                Handler{
-                    currentState.value = State.IDLE
-                    return@Handler true
-                }.sendEmptyMessageDelayed(0, 5000)
+                timerHandler.removeCallbacksAndMessages(null)
+                timerHandler.sendEmptyMessageDelayed(0, 5000)
 
             }else if(currentState.value == State.RECOGNITION){
                 currentState.value = State.IDLE
