@@ -15,6 +15,7 @@ import com.nota.hyundai_door.data.RegistrationRepository
 import com.nota.hyundai_door.data.User
 import com.nota.hyundai_door.ui.adapter.DebugImageAdapter
 import com.nota.hyundai_door.ui.adapter.DebugImageAdapter.Companion.toItemList
+import com.nota.nota_sdk.task.vision.FacialProcess.sortByBlurity
 import com.nota.nota_sdk.task.vision.FacialProcess.sortByGoodFacialQuality
 import com.nota.nota_sdk.task.vision.face.FacialFeature
 import java.util.*
@@ -277,12 +278,11 @@ class CameraViewModel: ViewModel() {
         timerHandler.removeCallbacksAndMessages(null)
         currentState.value = State.IDLE
 
-        // 얼굴 크기 큰 순서대로 정렬
-        val sortResult = candidateFacialDataList.sortByGoodFacialQuality()
+        // 좋은 퀄리티의 얼굴 TOP 3 중 Blur 점수가 가장 낮은 것으로 등록 진행
+        val sortResult = candidateFacialDataList.subList(0, 3).sortByBlurity()
+        debugImageAdapter.replace(sortResult.toItemList())
 
         if(sortResult.isNotEmpty()){
-            // 제일 좋은 품질의 데이터로 등록 진행
-
             FacialProcess.featureExtract(sortResult[0].detectedFaceBitmap){
                 bestRegistrationFeature = it.facialFeature
                 showConfirmDialogEvent.value = sortResult[0]
@@ -301,8 +301,9 @@ class CameraViewModel: ViewModel() {
         // Change to PROCESSING state
         currentState.value = State.IDLE
 
-        // 얼굴 데이터 후보군에서 품질이 제일 좋은 순서대로 정렬
-        val sortResult = candidateFacialDataList.sortByGoodFacialQuality()
+        // 좋은 퀄리티의 얼굴 TOP 3 중 Blur 점수가 가장 낮은 것으로 등록 진행
+        val sortResult = candidateFacialDataList.subList(0, 3).sortByBlurity()
+        debugImageAdapter.replace(sortResult.toItemList())
 
         if (sortResult.isEmpty()) {
             toastMessage.value = "인증실패: 등록된 사용자가 없습니다."

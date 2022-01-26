@@ -18,6 +18,7 @@ import com.nota.hyundai_lobby.http.HttpRepository
 import com.nota.hyundai_lobby.ui.adapter.DebugImageAdapter
 import com.nota.hyundai_lobby.ui.adapter.DebugImageAdapter.Companion.toItemList
 import com.nota.nota_sdk.task.vision.FacialProcess
+import com.nota.nota_sdk.task.vision.FacialProcess.sortByBlurity
 import com.nota.nota_sdk.task.vision.FacialProcess.sortByGoodFacialQuality
 import java.util.*
 import kotlin.collections.ArrayList
@@ -319,8 +320,9 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
 
         currentState.value = State.IDLE
 
-        // 얼굴 크기 큰 순서대로 정렬
-        val sortResult = candidateFacialDataList.sortByGoodFacialQuality()
+        // 좋은 퀄리티의 얼굴 TOP 3 중 Blur 점수가 가장 낮은 것으로 등록 진행
+        val sortResult = candidateFacialDataList.subList(0, 3).sortByBlurity()
+        debugImageAdapter.replace(sortResult.toItemList())
 
         if(sortResult.isNotEmpty()){
             // 제일 좋은 품질의 데이터로 등록 진행
@@ -341,8 +343,9 @@ class CameraViewModel(application: Application): AndroidViewModel(application) {
         // 대기 상태로 변경
         currentState.value = State.IDLE
 
-        // 얼굴 데이터 후보군에서 품질이 제일 좋은 순서대로 정렬
-        val sortResult = candidateFacialDataList.sortByGoodFacialQuality()
+        // 좋은 퀄리티의 얼굴 TOP 3 중 Blur 점수가 가장 낮은 것으로 등록 진행
+        val sortResult = candidateFacialDataList.subList(0, 3).sortByBlurity()
+        debugImageAdapter.replace(sortResult.toItemList())
 
         if (sortResult.isEmpty()) {
             toastMessage.value = "인증실패: 등록된 사용자가 없습니다."

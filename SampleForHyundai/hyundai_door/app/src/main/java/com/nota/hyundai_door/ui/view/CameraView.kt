@@ -157,9 +157,9 @@ class CameraView(context: Context, var bitmapListener: BitmapCallback, private v
             // DoorPhone 카메라 해상도 대응
             image.compressToJpeg(
                 Rect(
+                    cropWidthLeft,
                     0,
-                    0,
-                    1920,
+                    cropWidthRight,
                     1080
                 ), 80,
                 bos
