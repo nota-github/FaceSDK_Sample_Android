@@ -10,7 +10,7 @@ class RegistrationRepository private constructor(context: Context) {
     private val sharedPreferences = context.getSharedPreferences(TAG, Context.MODE_PRIVATE)
 
     enum class RegistrationErrorType {
-        SUCCESS, DUPLICATED_NAME, OVERCROWDING
+        SUCCESS, DUPLICATED_NAME, DUPLICATED_ID, OVERCROWDING
     }
 
     companion object {
@@ -56,11 +56,26 @@ class RegistrationRepository private constructor(context: Context) {
             if(it.name == user.name){
                 return RegistrationErrorType.DUPLICATED_NAME
             }
+
+            // 아이디 중복 방지
+            if(it.id == user.id){
+                return RegistrationErrorType.DUPLICATED_ID
+            }
         }
 
         val currentUserList = getUserList()
         currentUserList.add(user)
         val json = Gson().toJson(currentUserList)
+        val edit = sharedPreferences.edit()
+        edit.putString(KEY_MASK, json)
+        edit.apply()
+        return RegistrationErrorType.SUCCESS
+    }
+
+    fun deleteUserIndex(index: Int) : RegistrationErrorType {
+        val userList = getUserList()
+        userList.removeAt(index)
+        val json = Gson().toJson(userList)
         val edit = sharedPreferences.edit()
         edit.putString(KEY_MASK, json)
         edit.apply()

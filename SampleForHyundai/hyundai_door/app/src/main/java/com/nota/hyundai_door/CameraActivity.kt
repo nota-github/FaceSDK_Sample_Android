@@ -22,6 +22,7 @@ import com.nota.hyundai_door.databinding.ActivityCameraBinding
 import com.nota.hyundai_door.ui.BitmapCallback
 import com.nota.hyundai_door.ui.ConfirmDialog
 import com.nota.hyundai_door.ui.GuideDialog
+import com.nota.hyundai_door.ui.UserManagementDialog
 import com.nota.hyundai_door.ui.view.CameraView
 import com.nota.hyundai_door.ui.viewmodel.CameraViewModel
 
@@ -143,6 +144,14 @@ class CameraActivity : AppCompatActivity(),
             val dialog = GuideDialog(this)
             dialog.setOnDismissListener {
                 viewModel.startRegisterUser()
+            }
+            dialog.show()
+        }
+
+        viewModel.showUserManagementDialogEvent.observe(this) {
+            val dialog = UserManagementDialog(this)
+            dialog.setOnDismissListener {
+                viewModel.updateUserList()
             }
             dialog.show()
         }

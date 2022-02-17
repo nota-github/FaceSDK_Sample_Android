@@ -40,6 +40,7 @@ class CameraViewModel: ViewModel() {
     val toastMessage = SingleLiveEvent<String>()
     val showConfirmDialogEvent = SingleLiveEvent<FacialProcess.FaceDetectResult>()
     val showGuideDialogEvent = SingleLiveEvent<Unit>()
+    val showUserManagementDialogEvent = SingleLiveEvent<Unit>()
     val isDetectMask = MutableLiveData(false)
     val isDetectSpoof = MutableLiveData(false)
     val isCheckBlurScore = MutableLiveData(false)
@@ -224,6 +225,10 @@ class CameraViewModel: ViewModel() {
                     toastMessage.value = "등록실패 : 중복된 사용자 이름"
                 }
 
+                RegistrationRepository.RegistrationErrorType.DUPLICATED_ID->{
+                    toastMessage.value = "등록실패 : 중복된 사용자 아이디"
+                }
+
                 RegistrationRepository.RegistrationErrorType.OVERCROWDING->{
                     toastMessage.value = "등록실패 : 최대 ${RegistrationRepository.MAX_USER_COUNT}명 까지 등록 가능합니다."
                 }
@@ -247,6 +252,12 @@ class CameraViewModel: ViewModel() {
             }else{
                 cameraSelector.value = Camera.CameraInfo.CAMERA_FACING_FRONT
             }
+        }
+    }
+
+    fun onClickUserManagement() : View.OnClickListener {
+        return View.OnClickListener {
+            showUserManagementDialogEvent.call()
         }
     }
 
@@ -292,6 +303,10 @@ class CameraViewModel: ViewModel() {
             toastMessage.value = "얼굴을 찾을 수 없습니다."
         }
 
+    }
+
+    fun updateUserList(){
+        registrationUserList = RegistrationRepository.getInstance().getUserList()
     }
 
 
